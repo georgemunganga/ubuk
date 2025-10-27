@@ -4,10 +4,6 @@ import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import heroCarpentry from "@/assets/p1.webp";
-import heroElectrical from "@/assets/p2.webp";
-import heroPainting from "@/assets/p3.webp";
-import heroPlumbing from "@/assets/p4.webp";
 import useEmblaCarousel from "embla-carousel-react";
 
 const HeroEnhanced = () => {
@@ -51,7 +47,7 @@ const HeroEnhanced = () => {
     { img: "./public/plumber.jpg", badge: "Plumbing", title: "Expert plumbers" },
     { img: "./public/capenter.jpg", badge: "Carpentry", title: "Skilled carpenters" },
     { img: "./public/p1.webp", badge: "Electrical", title: "Licensed electricians" },
-    { img: heroPainting, badge: "Painting", title: "Professional painters" },
+    { img: "./public/p3.webp", badge: "Painting", title: "Professional painters" },
   ];
 
   // Mobile slider (Embla)
