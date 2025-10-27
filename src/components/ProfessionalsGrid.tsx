@@ -63,20 +63,20 @@ const ProfessionalsGrid = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
           <div>
-            <h2 className="text-3xl font-bold text-foreground mb-2">
+            <h2 className="text-3xl font-semibold text-foreground mb-2 tracking-tight">
               Available Professionals
             </h2>
             <p className="text-muted-foreground">
-              {professionals.length} trusted professionals ready to help
+              {professionals.length} trusted professionals near you
             </p>
           </div>
 
           {/* Controls */}
           <div className="flex items-center gap-3">
             <Select defaultValue="recommended">
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-[180px] rounded-lg border-border">
                 <SelectValue placeholder="Sort by" />
               </SelectTrigger>
               <SelectContent>
@@ -88,11 +88,11 @@ const ProfessionalsGrid = () => {
               </SelectContent>
             </Select>
 
-            <div className="flex gap-2 border border-border rounded-lg p-1">
-              <Button variant="ghost" size="icon" className="h-8 w-8">
+            <div className="flex gap-1 border border-border rounded-lg p-1">
+              <Button variant="ghost" size="icon" className="h-8 w-8 hover:bg-muted">
                 <Grid className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="h-8 w-8">
+              <Button variant="ghost" size="icon" className="h-8 w-8 hover:bg-muted">
                 <List className="h-4 w-4" />
               </Button>
             </div>
@@ -108,8 +108,8 @@ const ProfessionalsGrid = () => {
 
         {/* Load More */}
         <div className="text-center">
-          <Button variant="outline" size="lg">
-            Load More Professionals
+          <Button variant="outline" size="lg" className="rounded-full font-medium">
+            Show more professionals
           </Button>
         </div>
       </div>

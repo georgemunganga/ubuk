@@ -1,5 +1,4 @@
 import { Clock, Shield, DollarSign } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 const ValueProposition = () => {
   const features = [
@@ -24,39 +23,35 @@ const ValueProposition = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white border-t border-border/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-3 tracking-tight">
             Why Choose UBUKULE?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We make it easy to find, book, and work with trusted professionals
+            The easiest way to find trusted professionals
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <Card
+              <div
                 key={feature.title}
-                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="text-center space-y-4"
               >
-                <CardContent className="p-8 text-center">
-                  <div
-                    className={`mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6`}
-                  >
-                    <Icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
+                <div className="mx-auto w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center">
+                  <Icon className="h-7 w-7 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground tracking-tight">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
             );
           })}
         </div>

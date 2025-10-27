@@ -28,7 +28,7 @@ const CategoryFilter = () => {
   ];
 
   return (
-    <section className="py-6 bg-white border-b border-border/40">
+    <section className="py-8 bg-white border-b border-border/40 sticky top-16 z-40 backdrop-blur-sm bg-white/95">
       <div className="container mx-auto px-4">
         {/* Main Category Icons */}
         <div className="flex items-center gap-1 overflow-x-auto pb-2 scrollbar-hide mb-6">
@@ -40,16 +40,16 @@ const CategoryFilter = () => {
                 <button
                   key={category.label}
                   onClick={() => setActiveCategory(category.label)}
-                  className={`flex-shrink-0 flex flex-col items-center gap-2 py-3 px-4 transition-all relative group ${
+                  className={`flex-shrink-0 flex flex-col items-center gap-2 py-3 px-3 transition-all relative group ${
                     isActive ? "opacity-100" : "opacity-60 hover:opacity-100"
                   }`}
                 >
-                  <Icon className="h-6 w-6 text-foreground" strokeWidth={1.5} />
+                  <Icon className="h-5 w-5 text-foreground" strokeWidth={1.5} />
                   <span className="text-xs font-medium text-foreground whitespace-nowrap">
                     {category.label}
                   </span>
                   {isActive && (
-                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-foreground rounded-full" />
+                    <div className="absolute -bottom-3 left-0 right-0 h-0.5 bg-foreground" />
                   )}
                 </button>
               );
@@ -60,24 +60,23 @@ const CategoryFilter = () => {
           <Button
             variant="outline"
             size="sm"
-            className="flex-shrink-0 ml-4 gap-2 rounded-xl border-border"
+            className="flex-shrink-0 ml-4 gap-2 rounded-lg border-border hover:bg-muted"
           >
             <SlidersHorizontal className="h-4 w-4" />
-            <span className="text-sm">Filters</span>
           </Button>
         </div>
 
         {/* Sub-category Pills */}
-        <div className="flex gap-3 overflow-x-auto scrollbar-hide">
+        <div className="flex gap-2 overflow-x-auto scrollbar-hide">
           {subFilters.map((filter) => {
             const isActive = activeSubFilter === filter;
             return (
               <button
                 key={filter}
                 onClick={() => setActiveSubFilter(filter)}
-                className={`flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
+                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                   isActive
-                    ? "bg-primary text-white"
+                    ? "bg-foreground text-white"
                     : "bg-background border border-border hover:border-foreground/30"
                 }`}
               >

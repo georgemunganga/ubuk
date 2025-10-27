@@ -55,17 +55,17 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-foreground text-background border-t border-border/20">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-foreground text-background">
+      <div className="container mx-auto px-4 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <img src={logo} alt="UBUKULE" className="h-12 w-auto mb-4 brightness-0 invert" />
-            <p className="text-background/80 text-sm leading-relaxed mb-4">
+            <img src={logo} alt="UBUKULE" className="h-10 w-auto mb-4 brightness-0 invert" />
+            <p className="text-background/70 text-sm leading-relaxed mb-6">
               Connecting skilled professionals with customers who need them.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-2">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -73,9 +73,9 @@ const Footer = () => {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="bg-background/10 hover:bg-background/20 p-2 rounded-lg transition-colors"
+                    className="bg-background/5 hover:bg-background/10 p-2.5 rounded-lg transition-colors"
                   >
-                    <Icon className="h-4 w-4 text-background" />
+                    <Icon className="h-4 w-4 text-background/70" strokeWidth={1.5} />
                   </a>
                 );
               })}
@@ -85,15 +85,15 @@ const Footer = () => {
           {/* Link Columns */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="font-semibold text-background mb-4">
+              <h3 className="font-semibold text-background mb-4 text-sm">
                 {section.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {section.links.map((link) => (
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-background/70 hover:text-background text-sm transition-colors"
+                      className="text-background/60 hover:text-background text-sm transition-colors"
                     >
                       {link}
                     </a>
@@ -105,19 +105,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-background/20 pt-8">
+        <div className="border-t border-background/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-background/70 text-sm text-center md:text-left">
-              © {year} UBUKULE. All rights reserved. Build. Fix. Connect.
+            <p className="text-background/60 text-sm text-center md:text-left">
+              © {year} UBUKULE. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <a href="#" className="text-background/70 hover:text-background transition-colors">
+              <a href="#" className="text-background/60 hover:text-background transition-colors">
                 Accessibility
               </a>
-              <a href="#" className="text-background/70 hover:text-background transition-colors">
+              <a href="#" className="text-background/60 hover:text-background transition-colors">
                 Sitemap
               </a>
-              <a href="#" className="text-background/70 hover:text-background transition-colors">
+              <a href="#" className="text-background/60 hover:text-background transition-colors">
                 Cookie Preferences
               </a>
             </div>
