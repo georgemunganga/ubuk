@@ -92,9 +92,9 @@ const Hero = () => {
           </div>
 
           {/* Service Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 auto-rows-fr">
             {/* Large Card - Main Hero */}
-            <div className="lg:col-span-1 lg:row-span-2 relative group overflow-hidden rounded-3xl h-[400px] lg:h-full">
+            <div className="lg:row-span-2 relative group overflow-hidden rounded-3xl h-[400px] lg:h-full">
               <img 
                 src={heroPlumbing} 
                 alt="Professional service" 
@@ -126,7 +126,7 @@ const Hero = () => {
             </div>
 
             {/* Handyman Services */}
-            <div className="relative group overflow-hidden rounded-3xl h-[250px]">
+            <div className="relative group overflow-hidden rounded-3xl h-[200px] lg:h-auto">
               <img 
                 src={heroCarpentry} 
                 alt="Handyman Services" 
@@ -149,7 +149,7 @@ const Hero = () => {
             </div>
 
             {/* Office Work */}
-            <div className="relative group overflow-hidden rounded-3xl h-[250px]">
+            <div className="lg:row-span-2 relative group overflow-hidden rounded-3xl h-[400px] lg:h-full">
               <img 
                 src={heroElectrical} 
                 alt="Office Work" 
@@ -181,7 +181,7 @@ const Hero = () => {
             </div>
 
             {/* Shipping + Freight */}
-            <div className="relative group overflow-hidden rounded-3xl h-[200px]">
+            <div className="relative group overflow-hidden rounded-3xl h-[200px] lg:h-auto">
               <img 
                 src={heroPainting} 
                 alt="Shipping" 
@@ -203,8 +203,50 @@ const Hero = () => {
               </div>
             </div>
 
+            {/* Hire Top Tasker */}
+            <div className="lg:row-span-2 relative group overflow-hidden rounded-3xl h-[400px] lg:h-full bg-muted">
+              <div className="relative h-full p-6 flex flex-col justify-between">
+                <div className="flex gap-2">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
+                    Preston
+                  </Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
+                    Marry
+                  </Badge>
+                </div>
+                <div className="flex gap-2 my-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/60 border-4 border-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-accent/60 border-4 border-white -ml-6" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-secondary/60 border-4 border-white -ml-6" />
+                  <div className="w-16 h-16 rounded-full bg-muted-foreground/20 border-4 border-white -ml-6 flex items-center justify-center">
+                    <span className="text-sm font-semibold">...</span>
+                  </div>
+                </div>
+                <div className="flex gap-2 mb-4">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
+                    Sandy
+                  </Badge>
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
+                    John
+                  </Badge>
+                </div>
+                <div>
+                  <h3 className="text-foreground text-2xl font-bold mb-2">
+                    Hire top tasker
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    // Hire the Best Taskers<br />
+                    for Your Needs.
+                  </p>
+                </div>
+                <button className="absolute top-6 right-6 bg-primary rounded-full p-3 hover:scale-110 transition-transform">
+                  <ArrowUpRight className="h-5 w-5 text-white" />
+                </button>
+              </div>
+            </div>
+
             {/* Join as Professional */}
-            <div className="relative group overflow-hidden rounded-3xl h-[200px] bg-primary">
+            <div className="relative group overflow-hidden rounded-3xl h-[200px] lg:h-auto bg-primary">
               <div className="relative h-full p-6 flex flex-col justify-between">
                 <div className="flex items-center gap-3">
                   <div className="bg-white/20 p-3 rounded-full">
@@ -223,48 +265,6 @@ const Hero = () => {
                 </div>
                 <button className="absolute top-6 right-6 bg-white rounded-full p-3 hover:scale-110 transition-transform">
                   <ArrowUpRight className="h-5 w-5 text-primary" />
-                </button>
-              </div>
-            </div>
-
-            {/* Hire Top Tasker */}
-            <div className="relative group overflow-hidden rounded-3xl h-[200px] bg-muted">
-              <div className="relative h-full p-6 flex flex-col justify-between">
-                <div className="flex gap-2">
-                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
-                    Precision
-                  </Badge>
-                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
-                    More
-                  </Badge>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/60 border-2 border-white" />
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-accent/60 border-2 border-white -ml-4" />
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-secondary/60 border-2 border-white -ml-4" />
-                  <div className="w-12 h-12 rounded-full bg-muted-foreground/20 border-2 border-white -ml-4 flex items-center justify-center">
-                    <span className="text-xs font-semibold">...</span>
-                  </div>
-                </div>
-                <div className="flex gap-2 mb-2">
-                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
-                    Sandy
-                  </Badge>
-                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20">
-                    John
-                  </Badge>
-                </div>
-                <div>
-                  <h3 className="text-foreground text-xl font-bold mb-1">
-                    Hire top tasker
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    // Hire the Best Taskers<br />
-                    for Your Needs.
-                  </p>
-                </div>
-                <button className="absolute top-6 right-6 bg-primary rounded-full p-3 hover:scale-110 transition-transform">
-                  <ArrowUpRight className="h-5 w-5 text-white" />
                 </button>
               </div>
             </div>
