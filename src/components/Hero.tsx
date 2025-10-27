@@ -11,7 +11,7 @@ import joinPro from "@/assets/join-pro.jpg";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-br from-background via-secondary/30 to-background py-12 md:py-16">
+    <section className="bg-white py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Search Bar - Airbnb Style */}

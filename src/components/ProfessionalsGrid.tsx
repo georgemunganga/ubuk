@@ -60,7 +60,7 @@ const ProfessionalsGrid = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
