@@ -44,10 +44,10 @@ const HeroEnhanced = () => {
 
   // Card data
   const cards = [
-    { img: "./public/plumber.jpg", badge: "Plumbing", title: "Expert plumbers" },
-    { img: "./public/capenter.jpg", badge: "Carpentry", title: "Skilled carpenters" },
-    { img: "./public/p1.webp", badge: "Electrical", title: "Licensed electricians" },
-    { img: "./public/p3.webp", badge: "Painting", title: "Professional painters" },
+    { img: "/plumber.jpg", badge: "Plumbing", title: "Expert plumbers" },
+    { img: "/capenter.jpg", badge: "Carpentry", title: "Skilled carpenters" },
+    { img: "/p1.webp", badge: "Electrical", title: "Licensed electricians" },
+    { img: "/p3.webp", badge: "Painting", title: "Professional painters" },
   ];
 
   // Mobile slider (Embla)

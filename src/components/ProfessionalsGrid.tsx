@@ -21,7 +21,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Today",
       price: 250,
       skills: ["Wiring", "Installation", "Repair", "Maintenance"],
-      image: "./public/p5.webp",
+      image: "/p5.webp",
       verified: true,
     },
     {
@@ -33,7 +33,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Today",
       price: 250,
       skills: ["Wiring", "Installation", "Repair", "Maintenance"],
-      image: "./public/p4.webp",
+      image: "/p4.webp",
       verified: true,
     },
     {
@@ -45,7 +45,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Tomorrow",
       price: 280,
       skills: ["Pipe Fitting", "Drainage", "Fixtures", "Emergency"],
-      image: "./public/p1.webp",
+      image: "/p1.webp",
       verified: true,
     },
     {
@@ -57,7 +57,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Today",
       price: 300,
       skills: ["Custom Furniture", "Doors", "Cabinets", "Repairs"],
-      image: "./public/p3.webp",
+      image: "/p3.webp",
       verified: true,
     },
     {
@@ -69,7 +69,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Next Week",
       price: 220,
       skills: ["Interior", "Exterior", "Decorative", "Commercial"],
-      image: "./public/p6.webp",
+      image: "/p6.webp",
       verified: true,
     },
     {
@@ -81,7 +81,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Today",
       price: 260,
       skills: ["Solar Installation", "Wiring", "Repair", "Consultation"],
-      image: "./public/p5.webp",
+      image: "/p5.webp",
       verified: true,
     },
     {
@@ -93,7 +93,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Tomorrow",
       price: 290,
       skills: ["Installation", "Water Heating", "Drainage", "Maintenance"],
-      image: "./public/p1.webp",
+      image: "/p1.webp",
       verified: true,
     },
     {
@@ -129,7 +129,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Today",
       price: 270,
       skills: ["Industrial", "Residential", "Emergency", "Installation"],
-      image: "./public/p5.webp",
+      image: "/p5.webp",
       verified: true,
     },
     {
@@ -141,7 +141,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Tomorrow",
       price: 275,
       skills: ["Bathroom Fitting", "Kitchen", "Pipes", "Water Systems"],
-      image: "./public/p7.webp",
+      image: "/p7.webp",
       verified: true,
     },
     {
@@ -153,7 +153,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Today",
       price: 295,
       skills: ["Decking", "Joinery", "Furniture", "Fencing"],
-      image: "./public/p8.webp",
+      image: "/p8.webp",
       verified: true,
     },
     {
@@ -165,7 +165,7 @@ const ProfessionalsGrid = () => {
       availability: "Available Next Week",
       price: 215,
       skills: ["Interior Design", "Color Consultation", "Finishing", "Texture"],
-      image: "./public/p4.webp",
+      image: "/p4.webp",
       verified: true,
     },
   ];
