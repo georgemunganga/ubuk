@@ -17,7 +17,7 @@ const Register = () => {
       {/* Left Side - Image with Text Overlay */}
       <div className="relative md:w-1/2 h-48 sm:h-64 md:h-auto md:min-h-screen overflow-hidden animate-slide-in-left">
         <img
-          src="./public/p7.webp"
+          src="/p7.webp"
           alt="Professional services"
           className="absolute inset-0 w-full h-full object-cover"
         />

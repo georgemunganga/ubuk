@@ -71,24 +71,24 @@ const TaskerCTA = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img
-                    src="./public/task.webp"
+                    src="/task.webp"
                     alt="Professional tasker working on a project, demonstrating skill and expertise"
                     className="w-full h-48 object-cover rounded-3xl hover:scale-105 transition-transform duration-300"
                   />
                   <img
-                    src="./public/guy.jpg"
+                    src="/guy.jpg"
                     alt="Happy tasker smiling after completing a successful job"
                     className="w-full h-32 object-cover rounded-3xl hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="space-y-4 pt-8">
                   <img
-                    src="./public/ubu.jpg"
+                    src="/ubu.jpg"
                     alt="Professional service provider working efficiently on client project"
                     className="w-full h-32 object-cover rounded-3xl hover:scale-105 transition-transform duration-300"
                   />
                   <img
-                    src="./public/man.jpg"
+                    src="/man.jpg"
                     alt="Skilled tasker delivering quality workmanship to satisfied customers"
                     className="w-full h-48 object-cover rounded-3xl hover:scale-105 transition-transform duration-300"
                   />
@@ -103,4 +103,3 @@ const TaskerCTA = () => {
 };
 
 export default TaskerCTA;
-

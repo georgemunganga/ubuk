@@ -170,14 +170,14 @@ const Footer = () => {
               <a href="#" className="block">
                 <div className="hover:bg-white/20 rounded-lg p-1 transition-colors flex items-center justify-center">
                   <span className="text-xs">
-                    <img className="h-14 " src="./public/mobile-android.svg" alt="Android" />
+                    <img className="h-14 " src="/mobile-android.svg" alt="Android" />
                   </span>
                 </div>
               </a>
               <a href="#" className="block">
                 <div className=" hover:bg-white/20 rounded-lg p-1 transition-colors flex items-center justify-center">
                   <span className="text-xs">
-                    <img className="h-14" src="./public/mobile-ios.svg" alt="iOS" />
+                    <img className="h-14" src="/mobile-ios.svg" alt="iOS" />
                   </span>
                 </div>
               </a>

@@ -113,7 +113,7 @@ const SatisfactionGuarantee = () => {
             {/* Image with Stats */}
             <div className="relative">
               <img
-                src="./public/team.png"
+                src="/team.png"
                 alt="Happy customer"
                 className="w-full h-64 object-cover rounded-3xl"
               />
@@ -138,7 +138,7 @@ const SatisfactionGuarantee = () => {
             {/* Happy Customers Badge */}
             <div className="flex items-center gap-4">
               <img
-                src="./public/ubukule-logo.png"
+                src="/ubukule-logo.png"
                 alt="Happy team"
                 className="w-62 h-32 object-cover rounded-3xl"
               />
@@ -164,4 +164,3 @@ const SatisfactionGuarantee = () => {
 };
 
 export default SatisfactionGuarantee;
-
