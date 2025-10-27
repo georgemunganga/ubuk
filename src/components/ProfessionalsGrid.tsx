@@ -1,12 +1,14 @@
-import ProfessionalCard from "./ProfessionalCard";
-import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Grid, Heading1, List } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
-import { Grid, List } from "lucide-react";
-import heroPlumbing from "@/assets/hero-plumbing.jpg";
-import heroElectrical from "@/assets/hero-electrical.jpg";
-import heroCarpentry from "@/assets/hero-carpentry.jpg";
-import heroPainting from "@/assets/hero-painting.jpg";
+
+import { Button } from "@/components/ui/button";
+import ProfessionalCard from "./ProfessionalCard";
+import heroCarpentry from "@/assets/p3.webp";
+import heroElectrical from "@/assets/p5.webp";
+import heroPainting from "@/assets/p6.webp";
+import heroPlumbing from "@/assets/p1.webp";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const ProfessionalsGrid = () => {
   const professionals = [
@@ -20,6 +22,18 @@ const ProfessionalsGrid = () => {
       price: 250,
       skills: ["Wiring", "Installation", "Repair", "Maintenance"],
       image: heroElectrical,
+      verified: true,
+    },
+    {
+      name: "John Mwansa",
+      profession: "Electrician",
+      rating: 4.99,
+      reviews: 127,
+      distance: "Lusaka",
+      availability: "Available Today",
+      price: 250,
+      skills: ["Wiring", "Installation", "Repair", "Maintenance"],
+      image: "./public/p4.webp",
       verified: true,
     },
     {
@@ -156,16 +170,26 @@ const ProfessionalsGrid = () => {
     },
   ];
 
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section ref={ref} className={`relative py-16 bg-white animate-on-scroll ${isVisible ? 'animate-in' : ''} overflow-hidden`}>
+      {/* Gradient mesh background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl opacity-70" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-tl from-secondary/10 to-primary/5 rounded-full blur-3xl opacity-60" />
+        {/* Decorative stripes */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
-          <div>
-            <h2 className="text-3xl font-semibold text-foreground mb-2 tracking-tight">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+          <div className="space-y-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
               Available Professionals
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-base">
               {professionals.length} trusted professionals near you
             </p>
           </div>
@@ -209,7 +233,7 @@ const ProfessionalsGrid = () => {
         >
           <CarouselContent className="-ml-4">
             {professionals.map((pro) => (
-              <CarouselItem key={pro.name} className="pl-4 basis-[85%] sm:basis-[45%] md:basis-[32%] lg:basis-[23%] xl:basis-[18.5%]">
+              <CarouselItem key={pro.name} className="pl-4 py-2 basis-[75%] sm:basis-[35%] md:basis-[32%] lg:basis-[23%] xl:basis-[22.5%]">
                 <ProfessionalCard {...pro} />
               </CarouselItem>
             ))}
@@ -218,7 +242,7 @@ const ProfessionalsGrid = () => {
           {/* Navigation Buttons */}
           <div className="flex items-center justify-start gap-3 mt-8 ml-4">
             <CarouselPrevious className="static translate-y-0 rounded-full" />
-            <CarouselNext className="static translate-y-0 rounded-full" />
+            <CarouselNext className="static  translate-y-0 rounded-full" />
           </div>
         </Carousel>
       </div>

@@ -1,21 +1,32 @@
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
+import HeroEnhanced from "@/components/HeroEnhanced";
 import CategoryFilter from "@/components/CategoryFilter";
 import ProfessionalsGrid from "@/components/ProfessionalsGrid";
+import PopularTasks from "@/components/PopularTasks";
+import IntroducingUbukule from "@/components/IntroducingUbukule";
+import PopularProjects from "@/components/PopularProjects";
+import TaskerCTA from "@/components/TaskerCTA";
+import SatisfactionGuarantee from "@/components/SatisfactionGuarantee";
 import ValueProposition from "@/components/ValueProposition";
 import ProCTA from "@/components/ProCTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative">
+      {/* Global gradient background mesh */}
+      <div className="fixed inset-0 bg-gradient-mesh pointer-events-none" />
+      
       <Navigation />
       <main>
-        <Hero />
+        <HeroEnhanced />
         <CategoryFilter />
         <ProfessionalsGrid />
-        <ValueProposition />
-        <ProCTA />
+        <PopularTasks />
+        <IntroducingUbukule />
+        <PopularProjects />
+        <TaskerCTA />
+        <SatisfactionGuarantee />
       </main>
       <Footer />
     </div>

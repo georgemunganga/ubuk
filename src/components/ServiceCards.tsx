@@ -1,10 +1,10 @@
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import heroPlumbing from "@/assets/hero-plumbing.jpg";
-import heroElectrical from "@/assets/hero-electrical.jpg";
+import { Button } from "@/components/ui/button";
 import heroCarpentry from "@/assets/hero-carpentry.jpg";
+import heroElectrical from "@/assets/hero-electrical.jpg";
 import heroPainting from "@/assets/hero-painting.jpg";
+import heroPlumbing from "@/assets/hero-plumbing.jpg";
 import joinPro from "@/assets/join-pro.jpg";
 
 const ServiceCards = () => {
@@ -55,7 +55,7 @@ const ServiceCards = () => {
             <div
               key={service.title}
               className={`
-                group relative overflow-hidden rounded-2xl cursor-pointer
+                group relative overflow-hidden rounded-3xl cursor-pointer
                 transition-all duration-300 hover:shadow-xl hover:scale-[1.03]
                 ${index === 0 ? "md:col-span-2 md:row-span-2" : ""}
                 ${index === 4 ? "md:col-span-1" : ""}
@@ -75,7 +75,7 @@ const ServiceCards = () => {
                   <Badge className="self-start mb-3 bg-background/90 text-foreground hover:bg-background">
                     {service.badge}
                   </Badge>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                  <h3 className="text-3xl md:text-3xl font-bold mb-2">
                     {service.title}
                   </h3>
                   <p className="text-primary-foreground/90 mb-4 max-w-md">

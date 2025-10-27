@@ -1,5 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 const ProCTA = () => {
   return (
@@ -71,22 +72,22 @@ const ProCTA = () => {
               <div className="relative">
                 {/* Main Image Grid */}
                 <div className="grid grid-cols-2 gap-3 relative z-10">
-                  <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 aspect-square flex items-center justify-center">
-                    <div className="w-full h-full bg-white/20 rounded-xl"></div>
+                  <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-4 aspect-square flex items-center justify-center">
+                    <div className="w-full h-full bg-white/20 rounded-2xl"></div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 aspect-square flex items-center justify-center">
-                    <div className="w-full h-full bg-white/20 rounded-xl"></div>
+                  <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-4 aspect-square flex items-center justify-center">
+                    <div className="w-full h-full bg-white/20 rounded-2xl"></div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 aspect-square flex items-center justify-center col-span-2">
-                    <div className="w-full h-full bg-white/20 rounded-xl"></div>
+                  <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-4 aspect-square flex items-center justify-center col-span-2">
+                    <div className="w-full h-full bg-white/20 rounded-2xl"></div>
                   </div>
                 </div>
 
                 {/* Stats Badge */}
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 z-20">
+                <div className="absolute -bottom-4 -left-4 bg-white rounded-3xl shadow-xl p-4 z-20">
                   <p className="text-xs text-muted-foreground font-medium mb-1">Number of sellers</p>
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl font-bold text-primary">3176+</span>
+                    <span className="text-3xl font-bold text-primary">3176+</span>
                     <div className="bg-primary/10 rounded-full p-1">
                       <svg className="w-4 h-4 text-primary" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
@@ -97,7 +98,7 @@ const ProCTA = () => {
                 </div>
 
                 {/* Chat Icon Badge */}
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 rounded-2xl shadow-xl p-3 z-20">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 rounded-3xl shadow-xl p-3 z-20">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3.293 3.293 3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                   </svg>
