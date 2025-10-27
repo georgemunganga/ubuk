@@ -99,25 +99,28 @@ const ProfessionalsGrid = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Carousel */}
+      {/* Carousel - extends beyond container on right */}
+      <div className="container mx-auto pl-4">
         <Carousel
           opts={{
             align: "start",
             loop: false,
+            slidesToScroll: 1,
           }}
           className="w-full"
         >
           <CarouselContent className="-ml-4">
             {professionals.map((pro) => (
-              <CarouselItem key={pro.name} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <CarouselItem key={pro.name} className="pl-4 basis-[85%] sm:basis-[45%] md:basis-[32%] lg:basis-[23%] xl:basis-[18.5%]">
                 <ProfessionalCard {...pro} />
               </CarouselItem>
             ))}
           </CarouselContent>
           
           {/* Navigation Buttons */}
-          <div className="flex items-center justify-center gap-3 mt-8">
+          <div className="flex items-center justify-start gap-3 mt-8 ml-4">
             <CarouselPrevious className="static translate-y-0 rounded-full" />
             <CarouselNext className="static translate-y-0 rounded-full" />
           </div>
