@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Clock, MapPin, Search } from "lucide-react";
+import { Briefcase, ChevronLeft, ChevronRight, Clock, MapPin, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +21,11 @@ const HeroEnhanced = () => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<"location" | "datetime" | "service" | "mobile" | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
+  const [selectedService, setSelectedService] = useState("");
 
   useEffect(() => {
     const full = phrases[currentPhraseIndex];
@@ -76,33 +81,207 @@ const HeroEnhanced = () => {
           </h1>
         </div>
 
-        {/* Search Bar */}
-        <div className="bg-white rounded-full shadow-lg border border-primary/20 hover:shadow-md transition-shadow max-w-4xl mx-auto">
-          <div className="flex items-center p-1.5">
-            <div className="flex items-center gap-3 px-5 py-3 flex-1 hover:bg-muted/50 rounded-full transition-colors cursor-pointer">
-              <MapPin className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-              <div className="flex-1">
-                <div className="text-xs font-medium text-foreground mb-0.5">Location</div>
-                <Input placeholder="Where do you need help?" className="border-0 bg-transparent p-0 h-auto focus-visible:ring-0 text-sm placeholder:text-muted-foreground/60 focus:border-0" />
-              </div>
-            </div>
-            <div className="h-8 w-px bg-border/60" />
-            <div className="flex items-center gap-3 px-5 py-3 hover:bg-muted/50 rounded-full transition-colors cursor-pointer">
-              <Clock className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-              <div>
-                <div className="text-xs font-medium text-foreground mb-0.5">Start</div>
-                <Input type="time" className="border-0 ring-0 ring-white bg-transparent p-0 h-auto focus-visible:ring-0 text-sm w-20" />
-              </div>
-            </div>
-            <div className="h-8 w-px bg-border/60" />
-            <Button size="lg" className="rounded-full py-4 px-5 ml-1.5 flex-shrink-0 shadow-sm gap-2">
-              <span className="font-medium">Find help now</span>
-              <div className="bg-white rounded-full p-1.5">
-                <Search className="h-4 w-4 text-primary" />
-              </div>
-            </Button>
+        {/* Mobile Search (compact) */}
+        <div className="md:hidden px-4 mb-8">
+          <div className="bg-white rounded-full shadow-lg border border-gray-200 px-4 py-3 flex items-center gap-3 w-full hover:shadow-xl transition-shadow duration-200">
+            <Search className="h-5 w-5 text-gray-400 flex-shrink-0" />
+            <input
+              type="text"
+              placeholder="Search for services..."
+              className="flex-1 text-sm bg-transparent outline-none placeholder:text-gray-500"
+              onClick={() => setActiveDropdown("mobile")}
+              readOnly
+            />
+            <button className="bg-primary rounded-full p-2" aria-label="Search">
+              <Search className="h-4 w-4 text-white" />
+            </button>
           </div>
         </div>
+
+        {/* Desktop Search with dropdowns */}
+        <div className="hidden md:block relative">
+          <div className="bg-white rounded-full shadow-lg border border-primary/20 hover:shadow-md transition-shadow max-w-4xl mx-auto">
+            <div className="flex items-center p-1.5">
+              {/* Location */}
+              <div
+                className="flex items-center gap-3 px-5 py-3 flex-1 hover:bg-muted/50 rounded-full transition-colors cursor-pointer"
+                onClick={() => setActiveDropdown(activeDropdown === "location" ? null : "location")}
+              >
+                <MapPin className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                <div className="flex-1">
+                  <div className="text-xs font-medium text-foreground mb-0.5">Location</div>
+                  <div className="text-sm text-muted-foreground/90">
+                    {selectedLocation || "Where do you need help?"}
+                  </div>
+                </div>
+              </div>
+
+              <div className="h-8 w-px bg-border/60" />
+
+              {/* Date & Time */}
+              <div
+                className="flex items-center gap-3 px-5 py-3 hover:bg-muted/50 rounded-full transition-colors cursor-pointer"
+                onClick={() => setActiveDropdown(activeDropdown === "datetime" ? null : "datetime")}
+              >
+                <Clock className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                <div>
+                  <div className="text-xs font-medium text-foreground mb-0.5">When</div>
+                  <div className="text-sm text-muted-foreground/90">
+                    {selectedDate ? `${selectedDate}${selectedTime ? ` · ${selectedTime}` : ""}` : "Add dates"}
+                  </div>
+                </div>
+              </div>
+
+              <div className="h-8 w-px bg-border/60" />
+
+              {/* Service */}
+              <div
+                className="flex items-center gap-3 px-5 py-3 flex-1 hover:bg-muted/50 rounded-full transition-colors cursor-pointer"
+                onClick={() => setActiveDropdown(activeDropdown === "service" ? null : "service")}
+              >
+                <Briefcase className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                <div className="flex-1">
+                  <div className="text-xs font-medium text-foreground mb-0.5">Service</div>
+                  <div className="text-sm text-muted-foreground/90">
+                    {selectedService || "What service?"}
+                  </div>
+                </div>
+              </div>
+
+              <Button size="lg" className="rounded-full py-4 px-5 ml-1.5 flex-shrink-0 shadow-sm gap-2">
+                <span className="font-medium hidden lg:inline">Find help now</span>
+                <span className="font-medium lg:hidden">Search</span>
+                <div className="bg-white rounded-full p-1.5">
+                  <Search className="h-4 w-4 text-primary" />
+                </div>
+              </Button>
+            </div>
+          </div>
+
+          {/* Dropdown Panels */}
+          {activeDropdown === "location" && (
+            <div className="absolute top-full left-0 mt-2 w-96 bg-white rounded-2xl shadow-xl border border-gray-200 p-4 z-50">
+              <h3 className="font-semibold text-sm mb-3">Popular Locations</h3>
+              <div className="grid grid-cols-2 gap-2">
+                {["Lusaka", "Kitwe", "Ndola", "Livingstone", "Kabwe", "Chingola"].map((city) => (
+                  <button
+                    key={city}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedLocation(city);
+                      setActiveDropdown(null);
+                    }}
+                    className="text-left px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm"
+                  >
+                    <div className="font-medium">{city}</div>
+                    <div className="text-xs text-gray-500">Zambia</div>
+                  </button>
+                ))}
+              </div>
+              <div className="mt-4 pt-3 border-t">
+                <Input
+                  placeholder="Enter specific address..."
+                  className="w-full"
+                  value={selectedLocation}
+                  onClick={(e) => e.stopPropagation()}
+                  onChange={(e) => setSelectedLocation(e.target.value)}
+                />
+              </div>
+            </div>
+          )}
+
+          {activeDropdown === "datetime" && (
+            <div className="absolute top-full left-1/3 -translate-x-1/2 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-200 p-4 z-50">
+              <h3 className="font-semibold text-sm mb-3">Select Date & Time</h3>
+              <div className="space-y-3">
+                <div>
+                  <label className="text-xs font-medium text-gray-600 mb-1 block">Date</label>
+                  <Input type="date" className="w-full" value={selectedDate} onClick={(e) => e.stopPropagation()} onChange={(e) => setSelectedDate(e.target.value)} />
+                </div>
+                <div>
+                  <label className="text-xs font-medium text-gray-600 mb-1 block">Preferred Time</label>
+                  <div className="grid grid-cols-3 gap-2">
+                    {["Morning", "Afternoon", "Evening"].map((time) => (
+                      <button
+                        key={time}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedTime(time);
+                        }}
+                        className={`px-3 py-2 rounded-lg border transition-colors text-sm ${selectedTime === time ? "bg-primary text-white border-primary" : "border-gray-200 hover:border-primary"}`}
+                      >
+                        {time}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex justify-between pt-2">
+                  <button onClick={(e) => { e.stopPropagation(); setSelectedDate(""); setSelectedTime(""); }} className="text-sm text-gray-500 hover:text-gray-700">Clear</button>
+                  <button onClick={(e) => { e.stopPropagation(); setActiveDropdown(null); }} className="text-sm font-medium text-primary hover:text-primary/80">Apply</button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeDropdown === "service" && (
+            <div className="absolute top-full right-0 mt-2 w-96 bg-white rounded-2xl shadow-xl border border-gray-200 p-4 z-50">
+              <h3 className="font-semibold text-sm mb-3">Construction Services</h3>
+              <div className="grid grid-cols-2 gap-2 mb-3">
+                {["Construction", "Plumbing", "Electrical", "Carpentry", "Painting", "Roofing", "Flooring", "Masonry"].map((service) => (
+                  <button
+                    key={service}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedService(service);
+                      setActiveDropdown(null);
+                    }}
+                    className="flex items-center gap-2 text-left px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-primary/60" />
+                    <span className="font-medium">{service}</span>
+                  </button>
+                ))}
+              </div>
+              <div className="pt-3 border-t">
+                <button onClick={(e) => { e.stopPropagation(); setActiveDropdown(null); }} className="text-sm text-primary hover:text-primary/80 font-medium">
+                  View all services →
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Mobile dropdown sheet */}
+        {activeDropdown === "mobile" && (
+          <div className="md:hidden fixed inset-x-4 top-32 bg-white rounded-2xl shadow-xl border border-gray-200 p-4 z-50">
+            <h3 className="font-semibold text-base mb-4">What are you looking for?</h3>
+            <div className="mb-4">
+              <label className="text-xs font-medium text-gray-600 mb-2 block">Service Type</label>
+              <div className="grid grid-cols-2 gap-2">
+                {["Construction", "Plumbing", "Electrical", "Carpentry"].map((service) => (
+                  <button key={service} onClick={() => { setSelectedService(service); setActiveDropdown(null); }} className="flex items-center gap-2 px-3 py-2.5 rounded-lg border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors text-sm">
+                    <span className="w-2 h-2 rounded-full bg-primary/60" />
+                    <span className="font-medium">{service}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="mb-4">
+              <label className="text-xs font-medium text-gray-600 mb-2 block">Location</label>
+              <select className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm" onChange={(e) => setSelectedLocation(e.target.value)}>
+                <option value="">Select location</option>
+                <option value="Lusaka">Lusaka</option>
+                <option value="Kitwe">Kitwe</option>
+                <option value="Ndola">Ndola</option>
+                <option value="Livingstone">Livingstone</option>
+              </select>
+            </div>
+            <Button className="w-full rounded-full" onClick={() => setActiveDropdown(null)}>Search</Button>
+          </div>
+        )}
+
+        {/* Click outside to close */}
+        {activeDropdown && (<div className="fixed inset-0 z-40" onClick={() => setActiveDropdown(null)} />)}
 
         {/* Mobile slider */}
         <div className="md:hidden mt-12">
