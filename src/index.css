@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* UBUKULE Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 211 82% 26%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 211 82% 26%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 211 82% 26%;
+
+    /* Primary: Deep Blue #0C3977 */
+    --primary: 211 82% 26%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Light Blue Tint #E5ECF9 */
+    --secondary: 219 67% 94%;
+    --secondary-foreground: 211 82% 26%;
+
+    /* Light Gray #F5F5F7 */
+    --muted: 240 11% 97%;
+    --muted-foreground: 211 20% 40%;
+
+    --accent: 219 67% 94%;
+    --accent-foreground: 211 82% 26%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 11% 90%;
+    --input: 240 11% 90%;
+    --ring: 211 82% 26%;
+
+    --radius: 0.875rem;
+    
+    /* Shadows and Effects */
+    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
