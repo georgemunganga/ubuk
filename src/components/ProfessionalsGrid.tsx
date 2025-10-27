@@ -1,6 +1,7 @@
 import ProfessionalCard from "./ProfessionalCard";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { Grid, List } from "lucide-react";
 import heroPlumbing from "@/assets/hero-plumbing.jpg";
 import heroElectrical from "@/assets/hero-electrical.jpg";
@@ -99,19 +100,28 @@ const ProfessionalsGrid = () => {
           </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-8 mb-12">
-          {professionals.map((pro) => (
-            <ProfessionalCard key={pro.name} {...pro} />
-          ))}
-        </div>
-
-        {/* Load More */}
-        <div className="text-center">
-          <Button variant="outline" size="lg" className="rounded-full font-medium">
-            Show more professionals
-          </Button>
-        </div>
+        {/* Carousel */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {professionals.map((pro) => (
+              <CarouselItem key={pro.name} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                <ProfessionalCard {...pro} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          
+          {/* Navigation Buttons */}
+          <div className="flex items-center justify-center gap-3 mt-8">
+            <CarouselPrevious className="static translate-y-0 rounded-full" />
+            <CarouselNext className="static translate-y-0 rounded-full" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );
