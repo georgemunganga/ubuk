@@ -68,8 +68,11 @@ const Hero = () => {
               </div>
 
               {/* Search Button */}
-              <Button size="lg" className="rounded-full h-12 w-12 p-0 ml-1.5 flex-shrink-0 shadow-sm">
-                <Search className="h-4 w-4" />
+              <Button size="lg" className="rounded-full h-12 px-5 ml-1.5 flex-shrink-0 shadow-sm gap-2">
+                <span className="font-medium">Find help now</span>
+                <div className="bg-white rounded-full p-1.5">
+                  <Search className="h-4 w-4 text-primary" />
+                </div>
               </Button>
             </div>
           </div>
