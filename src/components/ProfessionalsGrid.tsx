@@ -11,10 +11,10 @@ const ProfessionalsGrid = () => {
   const professionals = [
     {
       name: "John Mwansa",
-      profession: "Certified Electrician",
-      rating: 4.9,
+      profession: "Electrician",
+      rating: 4.99,
       reviews: 127,
-      distance: "2.3 km",
+      distance: "Lusaka",
       availability: "Available Today",
       price: 250,
       skills: ["Wiring", "Installation", "Repair", "Maintenance"],
@@ -23,10 +23,10 @@ const ProfessionalsGrid = () => {
     },
     {
       name: "Patrick Banda",
-      profession: "Master Plumber",
-      rating: 4.8,
+      profession: "Plumber",
+      rating: 4.95,
       reviews: 94,
-      distance: "1.8 km",
+      distance: "Kitwe",
       availability: "Available Tomorrow",
       price: 280,
       skills: ["Pipe Fitting", "Drainage", "Fixtures", "Emergency"],
@@ -35,10 +35,10 @@ const ProfessionalsGrid = () => {
     },
     {
       name: "Moses Phiri",
-      profession: "Professional Carpenter",
-      rating: 4.9,
+      profession: "Carpenter",
+      rating: 4.98,
       reviews: 156,
-      distance: "3.5 km",
+      distance: "Ndola",
       availability: "Available Today",
       price: 300,
       skills: ["Custom Furniture", "Doors", "Cabinets", "Repairs"],
@@ -47,10 +47,10 @@ const ProfessionalsGrid = () => {
     },
     {
       name: "David Tembo",
-      profession: "Expert Painter",
-      rating: 4.7,
+      profession: "Painter",
+      rating: 4.89,
       reviews: 89,
-      distance: "2.1 km",
+      distance: "Livingstone",
       availability: "Available Next Week",
       price: 220,
       skills: ["Interior", "Exterior", "Decorative", "Commercial"],
@@ -100,7 +100,7 @@ const ProfessionalsGrid = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-8 mb-12">
           {professionals.map((pro) => (
             <ProfessionalCard key={pro.name} {...pro} />
           ))}
