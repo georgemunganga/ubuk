@@ -50,7 +50,7 @@ const IntroducingUbukule = () => {
               <div className="mt-8 p-6 bg-white rounded-3xl shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm font-medium text-muted-foreground">Expense Tracking</span>
-                  <span className="text-lg font-semibold text-foreground">$1,484</span>
+                  <span className="text-lg font-semibold text-foreground">K1,484</span>
                 </div>
                 <div className="flex items-end gap-2 h-32">
                   {[40, 60, 80, 90, 70, 85, 95, 75, 88, 92].map((height, i) => (
