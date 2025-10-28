@@ -101,7 +101,7 @@ const PopularTasks = () => {
                       <h3 className="text-white text-2xl font-semibold tracking-tight mb-1 drop-shadow-sm">
                         {task.title}
                       </h3>
-                      <p className="text-white/85 text-sm mb-4">// Starting at ${task.price}</p>
+                      <p className="text-white/85 text-sm mb-4">// Starting at K{task.price}</p>
 
                       <Button className="w-full rounded-full font-medium bg-white text-foreground hover:bg-white/95">
                         Get help now

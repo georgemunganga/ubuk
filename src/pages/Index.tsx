@@ -1,15 +1,15 @@
-import Navigation from "@/components/Navigation";
-import HeroEnhanced from "@/components/HeroEnhanced";
 import CategoryFilter from "@/components/CategoryFilter";
-import ProfessionalsGrid from "@/components/ProfessionalsGrid";
-import PopularTasks from "@/components/PopularTasks";
-import IntroducingUbukule from "@/components/IntroducingUbukule";
-import PopularProjects from "@/components/PopularProjects";
-import TaskerCTA from "@/components/TaskerCTA";
-import SatisfactionGuarantee from "@/components/SatisfactionGuarantee";
-import ValueProposition from "@/components/ValueProposition";
-import ProCTA from "@/components/ProCTA";
 import Footer from "@/components/Footer";
+import HeroEnhanced from "@/components/HeroEnhanced";
+import IntroducingUbukule from "@/components/IntroducingUbukule";
+import Navigation from "@/components/Navigation";
+import PopularProjects from "@/components/PopularProjects";
+import PopularTasks from "@/components/PopularTasks";
+import ProCTA from "@/components/ProCTA";
+import ProfessionalsGrid from "@/components/ProfessionalsGrid";
+import SatisfactionGuarantee from "@/components/SatisfactionGuarantee";
+import TaskerCTA from "@/components/TaskerCTA";
+import ValueProposition from "@/components/ValueProposition";
 
 const Index = () => {
   return (
